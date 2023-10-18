@@ -27,17 +27,17 @@
             <div class="emailPassword">
                 <label for="email">Email</label>
             </div>
-            <input type="email" id="email" class="emailInput">
+            <input type="text" id="email" name="email" class="emailInput">
             <div class="emailPassword">
                 <label for="mot_de_passe">Mot de Passe</label>
             </div>
-             <input type="password" id="mot_de_passe" class="mot_de_passeInput">
+             <input type="password" id="mot_de_passe" name="mot_de_passe" class="mot_de_passeInput">
             <div class="bas">
                 <div class="lienCreer">
                     <a href="connexion.php">J'ai déjà un compte</a>
                 </div>
                 <div class="lienInscription">
-                    <input type="submit" value="S'inscrire">
+                    <input type="submit" value="S'inscrire" name="valider">
                     <!-- <a href="">S'inscrire</a> -->
                 </div>
             </div>
