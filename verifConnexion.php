@@ -44,12 +44,36 @@ if($selectUser->rowCount()>0){
         // $_SESSION["mot_de_passe"]=$motDePasseConnect;
         // $_SESSION["id"]=$selectUser->fetch()["id"];
         echo "connexion reçue";
+        echo "<br>";
         // header("location:test.php");
     }else{
         echo "Votre email ou mot de passe est incorrect";
         echo "<br>";
     }
+    // Recuperation des inscrits
 
+    $sqlSelect = 'select nom,prenom,date_inscription from utilisateur';
 
-
+    $req= $mysqlClient->prepare($sqlSelect);
+    $req->execute();
+    
+    $affiche = $req->fetchAll();
+    
+    
 ?>
+    <table border="1">
+            <tr>
+                <td>Nom</td>
+                <td>Prénom</td>
+                <td>Date Inscription</td>
+            </tr>
+    <?php foreach ($affiche as $value):?>
+        
+            <tr>
+                <td><?php echo $value["nom"] ?></td>
+                <td><?php echo $value["prenom"] ?></td>
+                <td><?php echo $value["date_inscription"] ?></td>
+            </tr>
+       
+    <?php endforeach; ?>
+    </table>
